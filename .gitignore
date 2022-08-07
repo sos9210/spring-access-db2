@@ -1,6 +1,6 @@
 HELP.md
-.gradle
-build/
+itemservice-db/.gradle/
+itemservice-db/build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
