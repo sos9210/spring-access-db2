@@ -4,6 +4,7 @@ import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
 import hello.itemservice.repository.memory.MemoryItemRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 //@SpringBootApplication을 찾아서 설정으로 사용
 @SpringBootTest
 @Transactional  //테스트에서는 테스트가 끝나면 롤백한다.
+@Slf4j
 class ItemRepositoryTest {
 
     @Autowired
@@ -85,6 +87,8 @@ class ItemRepositoryTest {
         Item item1 = new Item("itemA-1", 10000, 10);
         Item item2 = new Item("itemA-2", 20000, 20);
         Item item3 = new Item("itemB-1", 30000, 30);
+
+        log.info("repository={}",itemRepository.getClass());
 
         itemRepository.save(item1);
         itemRepository.save(item2);
