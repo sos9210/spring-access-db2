@@ -81,6 +81,7 @@ class ItemRepositoryTest {
         assertThat(findItem.getQuantity()).isEqualTo(updateParam.getQuantity());
     }
 
+    //하이버네이트 오류로인해 버전다운해서 실행해봄
     @Test
     void findItems() {
         //given
@@ -100,7 +101,7 @@ class ItemRepositoryTest {
 
         //itemName 검증
         test("itemA", null, item1, item2);
-        test("temA", null, item1, item2);
+        test("itemA", null, item1, item2);
         test("itemB", null, item3);
 
         //maxPrice 검증
